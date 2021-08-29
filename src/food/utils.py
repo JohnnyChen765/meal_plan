@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 
 import pandas as pd
 
-from settings import chart
+from src.settings import chart
 from src.utils import Features
 
 

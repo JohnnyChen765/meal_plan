@@ -17,7 +17,7 @@ class Pasta(Food):
     name = "pasta"
 
 
-class ChickeBbreast(Food):
+class ChickenBreast(Food):
     name = "chicken_breast"
 
 
