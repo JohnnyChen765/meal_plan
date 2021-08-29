@@ -11,6 +11,10 @@ class Meal:
     def __init__(self, items: List[Food]) -> None:
         self.items = items
 
+    def details(self) -> pd.DataFrame:
+        list_features = [{"name": x.name, **x.features} for x in self.items]
+        return pd.DataFrame(list_features)
+
     def summary(self) -> pd.Series:
         list_features = [x.features for x in self.items]
         df = pd.DataFrame(list_features)
