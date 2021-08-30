@@ -12,7 +12,7 @@ class Meal:
         self.items = items
 
     def details(self) -> pd.DataFrame:
-        list_features = [{"name": x.name, **x.features} for x in self.items]
+        list_features = [{"name": x.name, "g": x.g, **x.features} for x in self.items]
         return pd.DataFrame(list_features)
 
     def summary(self) -> pd.Series:
@@ -26,5 +26,5 @@ class MealPlan:
         self.meals = meals
 
     def summary(self) -> pd.Series:
-        df = pd.concat([meal.summary() for meal in self.meals])
-        return df.sum()
+        df = pd.concat([meal.summary() for meal in self.meals], axis=1)
+        return df.sum(axis=1)

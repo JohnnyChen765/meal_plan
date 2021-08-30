@@ -39,5 +39,5 @@ class Food(ABC):
         self.__features__ = chart[self.name]
         self.features = (pd.Series(self.__features__) * g / 100).to_dict()
 
-    def summary(self) -> Features:
+    def summary(self) -> pd.Series:
         return pd.Series(self.features)

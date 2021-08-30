@@ -1,6 +1,7 @@
+from src.analyzer.analyzer import Analyzer
 from src.body.body import Body, Bulking
 from src.food.food import ChickenBreast, Courgette, Whey, WhiteRice
-from src.meal.meal import Meal
+from src.meal.meal import Meal, MealPlan
 
 body = Body(weight=55, fat=0.25, cal_neutral=1500)
 
@@ -14,4 +15,7 @@ chicken_meal = Meal(
 )
 
 bulking1 = Bulking(body=body, calory_intake=2000, features=None)
-print(bulking1.summary())
+meal_plan = MealPlan([chicken_meal, chicken_meal])
+analyzer = Analyzer(meal_plan, bulking1)
+t = analyzer.summary()
+print(t)
