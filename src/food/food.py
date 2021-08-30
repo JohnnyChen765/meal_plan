@@ -113,3 +113,7 @@ class Banana(Food):
 
 class Yogurt(Food):
     name = "yogurt"
+
+
+class Oil(Food):
+    name = "oil"

@@ -8,6 +8,7 @@ from src.food.food import (
     Egg,
     Ham,
     OatFlakes,
+    Oil,
     Pork,
     Whey,
     WhiteBread,
@@ -26,10 +27,11 @@ chicken_meal = Meal(
     [
         ChickenBreast(g=200),
         Whey(g=25),
-        WhiteRice(g=100),
+        WhiteRice(g=110),
         Courgette(g=50),
         Banana(g=100),
         Yogurt(g=100),
+        Oil(g=15),
     ],
     name="chicken_meal",
 )
@@ -38,14 +40,16 @@ porc_meal = Meal(
     [
         Pork(g=200),
         Whey(g=25),
-        WhiteRice(g=100),
+        WhiteRice(g=110),
         Courgette(g=50),
         Apple(g=100),
         Yogurt(g=100),
+        Oil(g=15),
     ],
     name="porc_meal",
 )
 
 meal_plan = MealPlan([bread_breakfast, chicken_meal, porc_meal])
 analyzer = Analyzer(meal_plan, bulking)
-print(analyzer.summary())
+# print(analyzer.summary())
+print(analyzer.details())
