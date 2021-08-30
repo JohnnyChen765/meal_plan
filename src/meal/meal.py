@@ -1,15 +1,17 @@
-from typing import List
+from typing import List, Optional
 
 import pandas as pd
 
-from src.food.utils import Food
+from src.food.food import Food
 
 
 class Meal:
     items: List[Food]
+    name: Optional[str]
 
-    def __init__(self, items: List[Food]) -> None:
+    def __init__(self, items: List[Food], name: Optional[str]) -> None:
         self.items = items
+        self.name = name
 
     def details(self) -> pd.DataFrame:
         list_features = [{"name": x.name, "g": x.g, **x.features} for x in self.items]

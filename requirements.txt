@@ -4,6 +4,7 @@ pytest-cov==2.12.1
 black==21.5b0
 flake8-isort==4.0.0
 mypy==0.910
+ipdb
 
 # Prod
 pandas

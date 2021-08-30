@@ -3,7 +3,7 @@ from typing import Optional
 
 import pandas as pd
 
-from src.food.utils import Features
+from src.food.food import Features
 
 nutrients_calory = {
     # kCal per g
@@ -66,7 +66,12 @@ class BodyStrategy:
         self.features = (
             features
             if features
-            else {"protein": self.protein, "fat": self.fat, "carb": self.carb}
+            else {
+                "protein": self.protein,
+                "fat": self.fat,
+                "carb": self.carb,
+                "kCal": self.calory_intake,
+            }
         )
 
     @property

@@ -1,7 +1,11 @@
 .PHONY: lint
 lint:
 	flake8
-	myypy
+	mypy .
+
+.PHONY: test
+test:
+	pytest
 
 .PHONY: install
 install:
@@ -11,3 +15,7 @@ install:
 format:
 	isort .
 	black .
+
+.PHONY: main
+main:
+	python3 -m src.main
