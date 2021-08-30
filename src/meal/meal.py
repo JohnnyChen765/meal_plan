@@ -19,3 +19,12 @@ class Meal:
         list_features = [x.features for x in self.items]
         df = pd.DataFrame(list_features)
         return df.sum()
+
+
+class MealPlan:
+    def __init__(self, meals: List[Meal]) -> None:
+        self.meals = meals
+
+    def summary(self) -> pd.Series:
+        df = pd.concat([meal.summary() for meal in self.meals])
+        return df.sum()
