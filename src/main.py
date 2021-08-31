@@ -49,7 +49,15 @@ porc_meal = Meal(
     name="porc_meal",
 )
 
+
 meal_plan = MealPlan([bread_breakfast, chicken_meal, porc_meal])
 analyzer = Analyzer(meal_plan, bulking)
 # print(analyzer.summary())
 print(analyzer.details())
+
+#                     kCal  protein        fat    carb  fibers
+# bread_breakfast   257.00    19.80  10.280000   20.86    1.08
+# chicken_meal      779.85    74.17  25.980000   58.35    3.10
+# porc_meal         896.85    65.37  46.680000   49.35    2.90
+# body_strategy    2000.00   110.00  44.444444  290.00     NaN
+# analyzer          -66.30    49.34  38.495556 -161.44     NaN
